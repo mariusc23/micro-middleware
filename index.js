@@ -1,5 +1,5 @@
 const applyMiddleware = (middlewares, handler) => {
-  return middlewares.reduce(
+  return middlewares.reduceRight(
     (fn, next) => next(fn),
     handler
   )
