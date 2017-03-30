@@ -2,6 +2,7 @@
 
 > Middleware for [micro](https://github.com/zeit/micro)
 
+[![CircleCI](https://circleci.com/gh/mariusc23/micro-middleware.svg?style=shield)](https://circleci.com/gh/mariusc23/micro-middleware)
 
 ## Installation
 
