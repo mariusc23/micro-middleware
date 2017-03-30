@@ -6,7 +6,7 @@
 
 ## Installation
 
-    npm install --save micro-middleware
+    npm install --save @mariusc23/micro-middleware
 
 
 ## Usage

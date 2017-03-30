@@ -1,5 +1,5 @@
 {
-  "name": "micro-middleware",
+  "name": "@mariusc23/micro-middleware",
   "version": "1.0.0",
   "description": "Middleware for micro.",
   "main": "index.js",
