@@ -3,7 +3,7 @@ const sinon = require('sinon')
 const { applyMiddleware } = require('../')
 
 describe('applyMiddleware', () => {
-  it('should call handler and every middleware', async () => {
+  it('should call handler and every middleware', () => {
     const spies = [
       sinon.spy(),
       sinon.spy(),
@@ -13,11 +13,11 @@ describe('applyMiddleware', () => {
     const middleware = [
       next => async (req, res) => {
         spies[0]()
-        return await next(req, res)
+        return next(req, res)
       },
       next => async (req, res) => {
         spies[1]()
-        return await next(req, res)
+        return next(req, res)
       },
     ]
 
@@ -64,5 +64,14 @@ describe('applyMiddleware', () => {
     const handler = () => true
     const result = applyMiddleware(middleware, handler)()
     expect(result).to.equal(true)
+  })
+
+  it('should work with no handler', () => {
+    const response = { success: true }
+    const middleware = [
+      next => () => (response),
+    ]
+    const result = applyMiddleware(middleware)()
+    expect(result).to.equal(response)
   })
 })
